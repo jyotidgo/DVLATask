@@ -30,10 +30,9 @@ public class Example {
 
 
     public Boolean validreg1(String re){
-        String reg = "^[A-Za-z]{2}[0-9]{2}[A-Za-z]{3}$";
+        String reg = "^[A-Za-z]{2}[0-9]{2}[A-Za-z]{3}$"; // Checking the regis num format is valid using regex
         Pattern p = Pattern.compile(reg);
-        return p.matcher(re).matches();
-
+        return p.matcher(re).matches();// returns true if the regex pattern matches
 
     }
 
@@ -42,23 +41,23 @@ public class Example {
     public static void main(String[] args) {
 
         Scanner sc =new Scanner(System.in);
-        String str=sc.nextLine();
+        String str=sc.nextLine(); // reading the value into a variable to check the registration number
 
 
-        Example e = new Example();
+        Example e = new Example(); // object created for the class
 
-        System.out.println(e.validreg1(str));
+        System.out.println(e.validreg1(str)); // printing back the boolean value response received
 
         // System.out.println(e.validreg("BD11SMR"));
 
         boolean v = true;
 
 
-        if(e.validreg1(str).equals(v)){
+        if(e.validreg1(str).equals(v)){ //comparing if value returned true to fetch the area code and year details
 
-            String a = str.substring(0,1);
-            String b = str.substring(2,4);
-            String d = str.substring(4,7);
+            String a = str.substring(0,1);// splitting the string to find the area code
+            String b = str.substring(2,4);// splitting the string to find the year
+            String d = str.substring(4,7);//splitting the string to find the random value
 
             System.out.println(a);
             System.out.println(b);
@@ -71,7 +70,7 @@ public class Example {
             SimpleDateFormat simpleformat = new SimpleDateFormat("yy");
             String strYear = simpleformat.format(new Date());
             System.out.println("Current Year = "+strYear);
-            switch (f){
+            switch (f){ // checking for invalid area code if present
                 case 'I':
                     System.out.println("Invalid area random code i present");
                     break;
@@ -83,7 +82,7 @@ public class Example {
                 default:
                     break;
             }
-            switch (c){
+            switch (c){ // checking for reg area name details
 
                 case 'A':
                     System.out.println("Region of registration is :  Anglia");
@@ -173,7 +172,7 @@ public class Example {
             int cYear = Integer.parseInt(strYear);
 
 
-            if(y==00){
+            if(y==00){ // checking for invalid years
 
                 System.out.println("Registration year is invalid");
             }
@@ -184,7 +183,7 @@ public class Example {
 
             else if(y==51){
 
-                System.out.println("Registration year is between sep 22 and feb 22");
+                System.out.println("Registration year is between sep 21 and feb 22");
 
             }
 
